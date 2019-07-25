@@ -1,6 +1,10 @@
-# VS Code ESLint extension
+# <div style="color: yellow">This version</div>
 
-[![Build Status](https://dev.azure.com/ms/vscode-eslint/_apis/build/status/Microsoft.vscode-eslint)](https://dev.azure.com/ms/vscode-eslint/_build/latest?definitionId=18)
+This is identical to [the popular](https://github.com/microsoft/vscode-eslint) extension except that `eslint.options.fix` may be a string representing a function body, in which case it will be `eval`-ed and passed as the function to `CLIEngine.fix`.
+
+---
+
+# VS Code ESLint extension
 
 Integrates [ESLint](http://eslint.org/) into VS Code. If you are new to ESLint check the [documentation](http://eslint.org/).
 

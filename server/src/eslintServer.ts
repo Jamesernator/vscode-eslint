@@ -126,7 +126,7 @@ interface CodeActionSettings {
 
 type PackageManagers = 'npm' | 'yarn' | 'pnpm';
 
-type ESLintOptions = object & { fixTypes?: string[] };
+type ESLintOptions = object & { fixTypes?: string[], fix?: string };
 interface TextDocumentSettings {
 	validate: boolean;
 	packageManager: PackageManagers;
@@ -176,6 +176,7 @@ interface ESLintReport {
 interface CLIOptions {
 	cwd?: string;
 	fixTypes?: string[];
+	fix?: (problem: ESLintProblem) => boolean;
 }
 
 // { meta: { docs: [Object], schema: [Array] }, create: [Function: create] }
@@ -837,6 +838,11 @@ function validate(document: TextDocument, settings: TextDocumentSettings, publis
 			fixTypes = undefined;
 		}
 	}
+	if (typeof newOptions.fix === 'string') {
+		const indirectEval = eval;
+		newOptions.fix = indirectEval('(' + newOptions.fix + ')');
+	}
+
 	let content = document.getText();
 	let uri = document.uri;
 	let file = getFilePath(document);

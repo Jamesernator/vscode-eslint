@@ -2,8 +2,8 @@
 	"name": "vscode-eslint",
 	"displayName": "ESLint",
 	"description": "Integrates ESLint JavaScript into VS Code.",
-	"version": "1.9.0",
-	"author": "Microsoft Corporation",
+	"version": "1.11.0",
+	"author": "Microsoft Corporation, James Browning",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
@@ -12,7 +12,7 @@
 	"bugs": {
 		"url": "https://github.com/Microsoft/vscode-eslint/issues"
 	},
-	"publisher": "dbaeumer",
+	"publisher": "james-browning",
 	"icon": "eslint_icon.png",
 	"categories": [
 		"Programming Languages",
